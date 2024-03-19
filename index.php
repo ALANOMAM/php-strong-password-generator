@@ -3,8 +3,19 @@
 
 $passwordLenght = $_GET["lunghezzaPassword"];
 
+ /* $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, count($alphabet)-1);
+        $pass[$i] = $alphabet[$n];
+        
+    }*/
+
 function test(){
-    echo"ciao mondo";
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $random = rand(0,100);
+   /* echo"ciao mondo $var <br>";*/
+
+    return $random;
 }
 
 ?>
@@ -39,30 +50,15 @@ function test(){
 <span> <?php echo $passwordLenght?> </span>
 </div>
 
-<?php
-/*
-function password(){
-
-    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    for ($i = 0; $i < 8; $i++) {
-        $n = rand(0, count($alphabet)-1);
-        $pass[$i] = $alphabet[$n];
-    }
-     return $pass;
-
     
-}*/
-
-
-
-?>
 
 <p>
 
 <?php
            
-
-        test();
+          
+       echo test();
+    
 
         
 ?>
