@@ -13,15 +13,14 @@ $passwordLenght = $_GET["lunghezzaPassword"];
 function test(){
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
     $passwordArray = [];
-    
+    $alphabetLenght = strlen($alphabet);
+
     for ($i = 0; $i < 8; $i++) {
-        $random = rand(0, 50);
+        $random = rand(0, $alphabetLenght);
     
         $passwordArray[$i] = $alphabet[$random];
     }
 
-
-   /* echo"ciao mondo $var <br>";*/
 
     return $passwordArray ;
 }
