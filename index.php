@@ -3,6 +3,10 @@
 
 $passwordLenght = $_GET["lunghezzaPassword"];
 
+function test(){
+    echo"ciao mondo";
+}
+
 ?>
 
 
@@ -18,7 +22,10 @@ $passwordLenght = $_GET["lunghezzaPassword"];
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body data-bs-theme="dark" >
+
+<div class="container">
+
 
 <form method="GET" action="index.php">
  <label for="lunghezzaPassword">Inserisci la lungezza della password : </label>
@@ -30,6 +37,40 @@ $passwordLenght = $_GET["lunghezzaPassword"];
 <div>
 <span>la lunghezza inserita è : </span>  
 <span> <?php echo $passwordLenght?> </span>
+</div>
+
+<?php
+/*
+function password(){
+
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, count($alphabet)-1);
+        $pass[$i] = $alphabet[$n];
+    }
+     return $pass;
+
+    
+}*/
+
+
+
+?>
+
+<p>
+
+<?php
+           
+
+        test();
+
+        
+?>
+
+</p>
+
+
+
 </div>
 <!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
