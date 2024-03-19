@@ -12,11 +12,18 @@ $passwordLenght = $_GET["lunghezzaPassword"];
 
 function test(){
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    $random = rand(0,20);
+    $passwordArray = [];
+    
+    for ($i = 0; $i < 8; $i++) {
+        $random = rand(0, 50);
+    
+        $passwordArray[$i] = $alphabet[$random];
+    }
+
 
    /* echo"ciao mondo $var <br>";*/
 
-    return $alphabet[$random];
+    return $passwordArray ;
 }
 
 ?>
@@ -57,8 +64,10 @@ function test(){
 
 <?php
            
-          
-       echo test();
+           for ($i = 0; $i < 8; $i++){
+            echo test()[$i];
+           }
+       
     
 
         
