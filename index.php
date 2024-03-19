@@ -1,27 +1,26 @@
 
 <?php
 
+// prendo la lunghezza generata dal mio form che salvo dentro una variabile
 $passwordLenght = $_GET["lunghezzaPassword"];
 
- /* $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
-    for ($i = 0; $i < 8; $i++) {
-        $n = rand(0, count($alphabet)-1);
-        $pass[$i] = $alphabet[$n];
-        
-    }*/
 
-function test(){
-    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+
+//funzione che mi restituisce un array formato da elementi casuali
+function randomGenerator($passwordLenght){
+    //stringa composta dai miei elementi casuali
+    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789*-+'!|";
+    //array che riempiro sotto
     $passwordArray = [];
     $alphabetLenght = strlen($alphabet);
 
-    for ($i = 0; $i < 8; $i++) {
+   //qusto è il ciclo che definisce quanyi elementi saranno dentro il mio array finale
+    for ($i = 0; $i < $passwordLenght; $i++) {
+        //la funzione "rand" mi genera numeri casuali da 0 alla lunghezza di alphabet
         $random = rand(0, $alphabetLenght);
-    
+        //riempio ogni index del mio array finale con elementi scelti casualmenti nella mia stringa alphabet
         $passwordArray[$i] = $alphabet[$random];
     }
-
-
     return $passwordArray ;
 }
 
@@ -60,16 +59,12 @@ function test(){
     
 
 <p>
-
+ <span>La password casuale generata è : </span>
 <?php
-           
-           for ($i = 0; $i < 8; $i++){
-            echo test()[$i];
-           }
-       
-    
-
-        
+            //richaimo la funzione "randomGenerator" iterando tra tutti gli elementi del mio array
+           for ($i = 0; $i <$passwordLenght ; $i++){
+            echo randomGenerator ($passwordLenght)[$i];
+           }       
 ?>
 
 </p>
